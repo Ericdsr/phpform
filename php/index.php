@@ -41,6 +41,14 @@
     <div class="p-1 bg-dark mt-2 mb-3"></div>
 
 </header>
+<div class="list-group  w-25 p-3">
+  <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+    The current link item
+  </a>
+  <a href="#" class="list-group-item list-group-item-action">A second link item</a>
+  <a href="#" class="list-group-item list-group-item-action">A third link item</a>
+  <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
+</div>
 <footer Align='Center'>
     <p>© Eric Dsr 2023</p>
 </footer>
