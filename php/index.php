@@ -15,6 +15,8 @@
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.1.3/dist/morph/bootstrap.min.css"> -->
 
 </head>
+<body>
+    
 <header class="d-none d-sm-block">
 
     <div class="card bg-dark rounded-0">
@@ -39,7 +41,8 @@
     <div class="p-1 bg-dark mt-2 mb-3"></div>
 
 </header>
-<body>
-    
+<footer Align='Center'>
+    <p>© Eric Dsr 2023</p>
+</footer>
 </body>
 </html>
