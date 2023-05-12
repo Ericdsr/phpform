@@ -41,14 +41,25 @@
     <div class="p-1 bg-dark mt-2 mb-3"></div>
 
 </header>
-<div class="list-group  w-25 p-3">
-  <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-    The current link item
-  </a>
-  <a href="#" class="list-group-item list-group-item-action">A second link item</a>
-  <a href="#" class="list-group-item list-group-item-action">A third link item</a>
-  <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
-</div>
+<nav class="d-flex justify-content-start">
+    <div class="list-group  w-25 p-3  d-flex ">
+      <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+        Home
+      </a>
+      <a href="#" class="list-group-item list-group-item-action">Débogage</a>
+      <a href="#" class="list-group-item list-group-item-action">Concaténation</a>
+      <a href="#" class="list-group-item list-group-item-action">Boucle</a>
+      <a href="#" class="list-group-item list-group-item-action">Fonction</a>
+      <a href="#" class="list-group-item list-group-item-action">Supprimer</a>
+    </div>
+</nav>
+<section class="d-flex justify-content-center">
+    <div class="btn-group w-25 p-3" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-primary">Middle</button>
+      <button type="button" class="btn btn-primary">Right</button>
+    </div>
+</section>
+
 <footer Align='Center'>
     <p>© Eric Dsr 2023</p>
 </footer>
