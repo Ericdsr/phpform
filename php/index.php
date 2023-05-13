@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,8 +48,9 @@
     <div class="p-1 bg-dark mt-2 mb-3"></div>
 
 </header>
-<nav class="d-flex justify-content-start">
-    <div class="list-group  w-25 p-3  d-flex ">
+<div class="d-flex flex-row">
+<nav class="d-flex justify-content-start flex-row  w-25 p-3 ">
+    <div class="list-group d-flex ">
       <a href="#" class="list-group-item list-group-item-action" aria-current="true">
         Home
       </a>
@@ -53,13 +61,13 @@
       <a href="#" class="list-group-item list-group-item-action">Supprimer</a>
     </div>
 </nav>
-<section class="d-flex justify-content-center">
-    <div class="btn-group w-25 p-3" role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-primary">Middle</button>
-      <button type="button" class="btn btn-primary">Right</button>
+<section class="d-flex justify-content-center w-75 h-25 p-3">
+    <div class="btn-group " role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-primary">Ajouter des données</button>
+      <button type="button" class="btn btn-primary">Enregistrer des données </button>
     </div>
 </section>
-
+</div>
 <footer Align='Center'>
     <p>© Eric Dsr 2023</p>
 </footer>
