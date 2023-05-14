@@ -51,20 +51,19 @@ session_start();
 <div class="d-flex flex-row">
 <nav class="d-flex justify-content-start flex-row  w-25 p-3 ">
     <div class="list-group d-flex ">
-      <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+      <a href="index.php" class="list-group-item list-group-item-action" aria-current="true">
         Home
       </a>
-      <a href="#" class="list-group-item list-group-item-action">Débogage</a>
-      <a href="#" class="list-group-item list-group-item-action">Concaténation</a>
-      <a href="#" class="list-group-item list-group-item-action">Boucle</a>
-      <a href="#" class="list-group-item list-group-item-action">Fonction</a>
-      <a href="#" class="list-group-item list-group-item-action">Supprimer</a>
+      <a href="index.php?debugging" class="list-group-item list-group-item-action">Débogage</a>
+      <a href="index.php?concatenation" class="list-group-item list-group-item-action">Concaténation</a>
+      <a href="index.php?loop" class="list-group-item list-group-item-action">Boucle</a>
+      <a href="index.php?function" class="list-group-item list-group-item-action">Fonction</a>
+      <a href="index.php?del" class="list-group-item list-group-item-action">Supprimer</a>
     </div>
 </nav>
 <section class="d-flex justify-content-center w-75 h-25 p-3">
     <div class="btn-group " role="group" aria-label="Basic example">
       <button type="button" class="btn btn-primary">Ajouter des données</button>
-      <button type="button" class="btn btn-primary">Enregistrer des données </button>
     </div>
 </section>
 </div>
