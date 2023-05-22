@@ -3,9 +3,11 @@ session_start();
 include './includes/head.inc.html';
 include './includes/header.inc.html';
 ?>
+<nav class="d-flex justify-content-start flex-row  w-25 p-3 ">
         <a href="index.php" class="list-group-item list-group-item-action" aria-current="true">
           Home
         </a>
+        </nav>
 <?php
     if (!empty($_SESSION)){
         include './includes/ul.inc.html';
@@ -38,7 +40,9 @@ include './includes/header.inc.html';
 
     else if (isset($_GET['debugging'])){
         echo "<h2>debuggage</h2>";
+        echo "<pre>",
         print_r($table);
+        echo "</pre>";
     }
 
     else if (isset($_GET['concatenation'])){
