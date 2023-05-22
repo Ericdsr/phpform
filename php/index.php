@@ -32,21 +32,22 @@ include './includes/header.inc.html';
             'size' => $size,
             'civility' => $civility,
         );
-
         $_SESSION['table'] = $table;
         echo "donnée save";
     }
 
 
     else if (isset($_GET['debugging'])){
-        echo "<h2>debuggage</h2>";
-        echo "<pre>",
+        echo "<h1>debuggage</h1>";
+        echo" <h2> ===> Lecture du tableau à l'aide de la fonction print_r() </h2>";
+        echo "<pre>";
         print_r($table);
         echo "</pre>";
     }
 
     else if (isset($_GET['concatenation'])){
-        echo " <h2>concatenation</h2>";
+        echo " <h1>Concatenation</h1>";
+        echo" <h2> ===> Construction d'une phrase avec le contenu du tableau  </h2>";
     }
 
     else if (isset($_GET['loop'])){
