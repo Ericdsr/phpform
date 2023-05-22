@@ -2,11 +2,16 @@
 session_start();
 include './includes/head.inc.html';
 include './includes/header.inc.html';
-$table = $_SESSION['table'];
 ?>
-
+        <a href="index.php" class="list-group-item list-group-item-action" aria-current="true">
+          Home
+        </a>
 <?php
-    include './includes/ul.inc.html';
+    if (!empty($_SESSION)){
+        include './includes/ul.inc.html';
+        $table = $_SESSION['table'];
+    }
+
 
     if (isset($_GET['add'])){
         include './includes/form.inc.html';
@@ -48,6 +53,7 @@ $table = $_SESSION['table'];
     }
     else if (isset($_GET['del'])){
         echo " <h2>del</h2>";
+        session_destroy();
     }
     else {
         echo "buttons";
