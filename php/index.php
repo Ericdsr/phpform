@@ -33,7 +33,7 @@ include './includes/header.inc.html';
             'civility' => $civility,
         );
         $_SESSION['table'] = $table;
-        echo "donnée save";
+        echo "données save";
     }
 
 
@@ -62,9 +62,10 @@ include './includes/header.inc.html';
     }
 
     else if (isset($_GET['loop'])){
-        foreach( $table as $value )
-        echo $value . '<br />';
-        echo " <h2>loop</h2>";
+        echo " <h2>Boucle</h2>";
+        $loop = 0;
+        foreach( $table as $key => $value )
+        echo "à la ligne n° ". $loop++ ." correspond la clé ". $key  ." et contient ". $value ."<br>" ;
     }
     else if (isset($_GET['function'])){
         echo " <h2>function</h2>";
