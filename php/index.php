@@ -47,21 +47,34 @@ include './includes/header.inc.html';
 
     else if (isset($_GET['concatenation'])){
         echo " <h1>Concatenation</h1>";
-        echo" <h2> ===> Construction d'une phrase avec le contenu du tableau  </h2>";
+        echo " <h2> ===> Construction d'une phrase avec le contenu du tableau  </h2>";
+        echo  "<p>".$table['civility']." " .$table['first_name']." ".$table['last_name']."</p>";
+        echo  "<p> J'ai ".$table['age']." ans et je mesure " .$table['size']." m. "."</p>";
+        echo " <h2> ===> Construction d'une phrase aprés MAJ du tableau  </h2>";
+        $table['first_name'] = ucfirst($table['first_name']);
+        $table['last_name'] = strtoupper($table['last_name']);
+        echo  "<p>".$table['civility']." " .$table['first_name']." ".$table['last_name']."</p>";
+        echo  "<p> J'ai ".$table['age']." ans et je mesure " .$table['size']." m. "."</p>";
+        echo " <h2> ===> Construction d'une virgule à la place du point pour la taille  </h2>";
+        $table['size'] = str_replace(".",",",$table['size']);
+        echo  "<p>".$table['civility']." " .$table['first_name']." ".$table['last_name']."</p>";
+        echo  "<p> J'ai ".$table['age']." ans et je mesure " .$table['size']." m. "."</p>";
     }
 
     else if (isset($_GET['loop'])){
+        foreach( $table as $value )
+        echo $value . '<br />';
         echo " <h2>loop</h2>";
     }
     else if (isset($_GET['function'])){
         echo " <h2>function</h2>";
     }
     else if (isset($_GET['del'])){
-        echo " <h2>del</h2>";
+        echo " <h2>delete</h2>";
         session_destroy();
     }
     else {
-        echo "buttons";
+        echo "<a href='index.php?add' class='btn btn-primary'> Ajouter des données</a>";
     }
 ?>
 
