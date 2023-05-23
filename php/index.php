@@ -3,18 +3,23 @@ session_start();
 include './includes/head.inc.html';
 include './includes/header.inc.html';
 ?>
-<nav class="d-flex justify-content-start flex-row  w-25 p-3 ">
-        <a href="index.php" class="list-group-item list-group-item-action" aria-current="true">
-          Home
-        </a>
-        </nav>
-<?php
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+
+            <a href="index.php" class="list-group-item list-group-item-action" aria-current="true">
+              Home
+            </a>
+            <?php
     if (!empty($_SESSION)){
         include './includes/ul.inc.html';
         $table = $_SESSION['table'];
     }
+    ?>
+    </div>
+    <div class="col">
 
-
+    <?php
     if (isset($_GET['add'])){
         include './includes/form.inc.html';
     }
@@ -78,7 +83,7 @@ include './includes/header.inc.html';
         session_destroy();
     }
     else {
-        echo "<a href='index.php?add' class='btn btn-primary'> Ajouter des données</a>";
+        echo "<div class='col-md-9'><a href='index.php?add' class='btn btn-primary'> Ajouter des données</a></div>";
     }
     function readTable($table){
         $loop = 0;
@@ -86,6 +91,9 @@ include './includes/header.inc.html';
             echo "à la ligne n° ". $loop++ ." correspond la clé ". $key  ." et contient ". $value ."<br>" ;
     }
 ?>
-
+            
+            </div>
+    </div>
+</div>
 </body>
 </html>
