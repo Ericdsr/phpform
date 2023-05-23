@@ -43,8 +43,16 @@ include './includes/header.inc.html';
         $color = $_POST['color'];
         $date = $_POST['date'];
         $file = $_POST['file'];
+        
+        $upload = 'uploaded/' . $_FILES['file']['name'];
 
         
+        if (move_uploaded_file($_FILES['file']['tmp_name'], $upload)) {
+            print "Téléchargé avec succès!";
+        } else {
+            print "Échec du téléchargement!";
+        }
+
         $table = array(
             'first_name' => $prenom,
             'last_name' => $nom,

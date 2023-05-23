@@ -1,4 +1,4 @@
-<form action="index.php" method="POST" class="col-md-9">
+<form action="index.php" method="POST" class="col-md-9" enctype="multipart/form-data">
     <div class="mb-3" >
       <label for="exampleInputEmail1" class="form-label">Prénom</label>
       <input type="text" class="form-control" name="first_name">
