@@ -63,12 +63,15 @@ include './includes/header.inc.html';
 
     else if (isset($_GET['loop'])){
         echo " <h2>Boucle</h2>";
+        echo " <h2> ===> Lecture à l'aide d'une boucle foreach  </h2>";
         $loop = 0;
         foreach( $table as $key => $value )
         echo "à la ligne n° ". $loop++ ." correspond la clé ". $key  ." et contient ". $value ."<br>" ;
     }
     else if (isset($_GET['function'])){
         echo " <h2>function</h2>";
+        echo " <h2> ===> J'utilise ma function readTable()  </h2>";
+        readTable($table);
     }
     else if (isset($_GET['del'])){
         echo " <h2>delete</h2>";
@@ -76,6 +79,11 @@ include './includes/header.inc.html';
     }
     else {
         echo "<a href='index.php?add' class='btn btn-primary'> Ajouter des données</a>";
+    }
+    function readTable($table){
+        $loop = 0;
+            foreach( $table as $key => $value )
+            echo "à la ligne n° ". $loop++ ." correspond la clé ". $key  ." et contient ". $value ."<br>" ;
     }
 ?>
 
