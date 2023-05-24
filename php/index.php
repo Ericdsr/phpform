@@ -26,11 +26,12 @@ include './includes/header.inc.html';
     else if (isset($_GET['addmore'])){
         include './includes/form2.inc.php';
     }
+    
     else if(isset($_POST['submit'])){
         $prenom = $_POST['first_name'];
         $nom = $_POST['last_name'];
         $age = $_POST['age'];
-        $size = $_POST['size'];
+        $taille = $_POST['taille'];
         $civility = $_POST['civility'];
         $html = $_POST['html'];
         $css = $_POST['css'];
