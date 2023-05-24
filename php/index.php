@@ -42,20 +42,21 @@ include './includes/header.inc.html';
         $react = $_POST['react'];
         $color = $_POST['color'];
         $date = $_POST['date'];
-        $file = $_POST['file'];
+        //$file = $_POST['file'];
         $fichier = $_POST['size'];
-        $type = $_POST['type'];
-        $tmpname = $_POST['tmpname'];
-        $error = $_POST['error'];
-        $size = $_POST['size'];
+        $tmpName = $_FILES['file']['tmp_name'];
+        $name = $_FILES['file']['name'];
+        $type = $_FILES['file']['type'];
+        $size = $_FILES['file']['size'];
+        $error = $_FILES['file']['error'];
 
         
-        $upload = './uploaded/' . $_FILES['file']['name'];
+        $upload = './uploaded/' .'image1.png';
 
         $allowedExtensions = array("jpg", "jpeg", "png", "gif");
         $imageFileType = strtolower(pathinfo($_FILES["file"]["name"], PATHINFO_EXTENSION));
         
-        if ($_FILES["file"]["size"] > 300000) {
+        if ($_FILES["file"]["size"] > 800000) {
             echo "Le fichier est trop volumineux. Veuillez choisir un fichier de taille inférieure.";
         } else if (!in_array($imageFileType, $allowedExtensions)) {
             echo "Le type de fichier n'est pas pris en charge. Veuillez choisir un fichier JPG, JPEG, PNG ou GIF.";
@@ -71,7 +72,7 @@ include './includes/header.inc.html';
             'first_name' => $prenom,
             'last_name' => $nom,
             'age' => $age,
-            'size' => $size,
+            'size' => $taille,
             'civility' => $civility,
             'html' => $html,
             'css' => $css,
@@ -83,11 +84,11 @@ include './includes/header.inc.html';
             'react' => $react,
             'color' => $color,
             'date' => $date,
-            'file' => $file,
-            $file = array(
-                'fichier' => $fichier,
+            //'file' => $file,
+            'img' => $file = array(
+                'name' => $name,
                 'type' => $type,
-                'tmp_name' => $tmpname,
+                'tmp_name' => $tmpName,
                 'error' => $error,
                 'size' => $size,
             )
@@ -128,6 +129,7 @@ include './includes/header.inc.html';
         $loop = 0;
         foreach( $table as $key => $value )
         echo "à la ligne n° ". $loop++ ." correspond la clé ". $key  ." et contient ". $value ."<br>" ;
+        echo '<img src="./uploaded/image1.png" class="mw-100" alt="Description de l\'image">';
     }
     else if (isset($_GET['function'])){
         echo " <h2>function</h2>";
