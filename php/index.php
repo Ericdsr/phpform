@@ -43,15 +43,29 @@ include './includes/header.inc.html';
         $color = $_POST['color'];
         $date = $_POST['date'];
         $file = $_POST['file'];
-        
-        $upload = 'uploaded/' . $_FILES['file']['name'];
+        $fichier = $_POST['size'];
+        $type = $_POST['type'];
+        $tmpname = $_POST['tmpname'];
+        $error = $_POST['error'];
+        $size = $_POST['size'];
 
         
-        if (move_uploaded_file($_FILES['file']['tmp_name'], $upload)) {
-            print "Téléchargé avec succès!";
+        $upload = './uploaded/' . $_FILES['file']['name'];
+
+        $allowedExtensions = array("jpg", "jpeg", "png", "gif");
+        $imageFileType = strtolower(pathinfo($_FILES["file"]["name"], PATHINFO_EXTENSION));
+        
+        if ($_FILES["file"]["size"] > 300000) {
+            echo "Le fichier est trop volumineux. Veuillez choisir un fichier de taille inférieure.";
+        } else if (!in_array($imageFileType, $allowedExtensions)) {
+            echo "Le type de fichier n'est pas pris en charge. Veuillez choisir un fichier JPG, JPEG, PNG ou GIF.";
+        } else if (move_uploaded_file($_FILES["file"]["tmp_name"], $upload)) {
+            echo "Téléchargé avec succès!";
         } else {
-            print "Échec du téléchargement!";
+            echo "Échec du téléchargement!";
         }
+        
+        
 
         $table = array(
             'first_name' => $prenom,
@@ -70,6 +84,13 @@ include './includes/header.inc.html';
             'color' => $color,
             'date' => $date,
             'file' => $file,
+            $file = array(
+                'fichier' => $fichier,
+                'type' => $type,
+                'tmp_name' => $tmpname,
+                'error' => $error,
+                'size' => $size,
+            )
         );
         $_SESSION['table'] = $table;
         echo "données save";
@@ -77,6 +98,7 @@ include './includes/header.inc.html';
 
 
     else if (isset($_GET['debugging'])){
+
         echo "<h1>debuggage</h1>";
         echo" <h2> ===> Lecture du tableau à l'aide de la fonction print_r() </h2>";
         echo "<pre>";
