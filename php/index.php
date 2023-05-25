@@ -12,7 +12,7 @@ include './includes/header.inc.html';
             </a>
             <?php
     if (!empty($_SESSION)){
-        include './includes/ul.inc.html';
+        include './includes/ul.inc.php';
         $table = $_SESSION['table'];
     }
     ?>
@@ -139,7 +139,7 @@ include './includes/header.inc.html';
     }
     else if (isset($_GET['del'])){
         echo " <h2>delete</h2>";
-        session_destroy();
+        session_unset();
     }
     else {
         echo "<div class='col-md-9'><a href='index.php?add' class='btn btn-primary'> Ajouter des données</a></div>";
@@ -150,6 +150,11 @@ include './includes/header.inc.html';
             foreach( $table as $key => $value )
             echo "à la ligne n° ". $loop++ ." correspond la clé ". $key  ." et contient ". $value ."<br>" ;
     }
+?>
+<?php
+
+include './includes/footer.inc.html';
+
 ?>
             
             </div>
