@@ -28,29 +28,30 @@ include './includes/header.inc.html';
     }
     
     else if(isset($_POST['submit'])){
-        $prenom = $_POST['first_name'];
-        $nom = $_POST['last_name'];
-        $age = $_POST['age'];
-        $taille = $_POST['taille'];
-        $civility = $_POST['civility'];
-        $html = $_POST['html'];
-        $css = $_POST['css'];
-        $javascript = $_POST['javascript'];
-        $php = $_POST['php'];
-        $mysql = $_POST['mysql'];
-        $bootstrap = $_POST['bootstrap'];
-        $symfony = $_POST['symfony'];
-        $react = $_POST['react'];
-        $color = $_POST['color'];
-        $date = $_POST['date'];
-        //$file = $_POST['file'];
-        $fichier = $_POST['size'];
-        $tmpName = $_FILES['file']['tmp_name'];
-        $name = $_FILES['file']['name'];
-        $type = $_FILES['file']['type'];
-        $size = $_FILES['file']['size'];
-        $error = $_FILES['file']['error'];
 
+        if (!empty($_POST['first_name'])){$prenom = $_POST['first_name'];} else {$prenom = "";}
+        if (!empty($_POST['last_name'])){$nom = $_POST['last_name'];} else {$nom = "";}
+        if (!empty($_POST['age'])){$age = $_POST['age'];} else {$age = "";}
+        if (!empty($_POST['taille'])){$taille = $_POST['taille'];} else {$taille = "";}
+        if (!empty($_POST['civility'])){$civility = $_POST['civility'];} else {$civility = "";}
+        if (!empty($_POST['html'])){$html = $_POST['html'];} else {$html = "";}
+        if (!empty($_POST['css'])){$css = $_POST['css'];} else {$css = "";}
+        if (!empty($_POST['javascript'])){$javascript = $_POST['javascript'];} else {$javascript = "";}
+        if (!empty($_POST['php'])){$php = $_POST['php'];} else {$php = "";}
+        if (!empty($_POST['mysql'])){$mysql = $_POST['mysql'];} else {$mysql = "";}
+        if (!empty($_POST['bootstrap'])){$php = $_POST['bootstrap'];} else {$bootstrap = "";}
+        if (!empty($_POST['symfony'])){$symfony = $_POST['symfony'];} else {$symfony = "";}
+        if (!empty($_POST['react'])){$react = $_POST['react'];} else {$react = "";}
+        if (!empty($_POST['color'])){$color = $_POST['color'];} else {$color = "";}
+        if (!empty($_POST['date'])){$date = $_POST['date'];} else {$date = "";}
+        if (!empty($_POST['size'])){$fichier = $_POST['size'];} else {$fichier = "";}
+        //$file = $_POST['file'];
+        if (!empty($_POST['file'])){$file = $_POST['file'];} else {$file = "";}
+        if (!empty($_FILES['file']['tmp_name'])){$tmpName = $_FILES['file']['tmp_name'];} else {$tmpName = "";}
+        if (!empty($_FILES['file']['name'])){$name = $_FILES['file']['name'];} else {$name = "";}
+        if (!empty($_FILES['file']['type'])){$type = $_FILES['file']['type'];} else {$type = "";}
+        if (!empty($_FILES['file']['size'])){$size = $_FILES['file']['size'];} else {$size = "";}
+        if (!empty($_FILES['file']['error'])){$error = $_FILES['file']['error'];} else {$error = "";}
         
         $upload = './uploaded/' .'image1.png';
 
@@ -80,7 +81,7 @@ include './includes/header.inc.html';
             'javascript' => $javascript,
             'php' => $php,
             'mysql' => $mysql,
-            'bootstrap' => $bootstrap,
+            //'bootstrap' => $bootstrap,
             'symfony' => $symfony,
             'react' => $react,
             'color' => $color,
@@ -97,7 +98,6 @@ include './includes/header.inc.html';
         $_SESSION['table'] = $table;
         echo "données save";
     }
-
 
     else if (isset($_GET['debugging'])){
 
