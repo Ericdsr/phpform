@@ -27,7 +27,7 @@ include './includes/header.inc.html';
         include './includes/form2.inc.php';
     }
     
-    else if(isset($_POST['submit'])){
+    else if(isset($_POST['submit_more'])){
 
         if (!empty($_POST['first_name'])){$prenom = $_POST['first_name'];} else {$prenom = "";}
         if (!empty($_POST['last_name'])){$nom = $_POST['last_name'];} else {$nom = "";}
@@ -58,7 +58,7 @@ include './includes/header.inc.html';
         $allowedExtensions = array("jpg", "jpeg", "png", "gif");
         $imageFileType = strtolower(pathinfo($_FILES["file"]["name"], PATHINFO_EXTENSION));
         
-        if ($_FILES["file"]["size"] > 800000) {
+        if ($_FILES["file"]["size"] > 2000000) {
             echo "Le fichier est trop volumineux. Veuillez choisir un fichier de taille inférieure.";
         } else if (!in_array($imageFileType, $allowedExtensions)) {
             echo "Le type de fichier n'est pas pris en charge. Veuillez choisir un fichier JPG, JPEG, PNG ou GIF.";

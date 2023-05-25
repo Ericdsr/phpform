@@ -74,5 +74,5 @@
         <input type="file" name="file" value="file">
         <label for="file"> Choisir un fichier </label>
       </div>
-    <button type="submit" class="btn btn-primary" name="submit" value="Submit">Enregistrer les données</button>
+    <button type="submit" class="btn btn-primary" name="submit_more" value="Submit">Enregistrer les données</button>
   </form>
