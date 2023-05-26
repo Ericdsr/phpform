@@ -148,8 +148,13 @@ include './includes/header.inc.html';
         echo " <h2> ===> Lecture à l'aide d'une boucle foreach  </h2>";
         $loop = 0;
         foreach( $table as $key => $value )
-        echo "à la ligne n° ". $loop++ ." correspond la clé ". $key  ." et contient ". $value ."<br>" ;
-        echo '<img src="./uploaded/image1.png" class="mw-100" alt="Description de l\'image">';
+        if($key == 'img'){
+            echo "à la ligne n° ". $loop++ ." correspond la clé  img  et contient <br>" ;
+            echo '<img src="./uploaded/image1.png" class="mw-100" alt="Description de l\'image">';
+        }
+        else{
+            echo "à la ligne n° ". $loop++ ." correspond la clé ". $key  ." et contient ". $value ."<br>" ;
+        }
     }
     else if (isset($_GET['function'])){
         echo " <h2>function</h2>";
@@ -167,7 +172,13 @@ include './includes/header.inc.html';
     function readTable($table){
         $loop = 0;
             foreach( $table as $key => $value )
-            echo "à la ligne n° ". $loop++ ." correspond la clé ". $key  ." et contient ". $value ."<br>" ;
+            if($key == 'img'){
+                echo "à la ligne n° ". $loop++ ." correspond la clé  img  et contient <br>" ;
+                echo '<img src="./uploaded/image1.png" class="mw-100" alt="Description de l\'image">';
+            }
+            else{
+                echo "à la ligne n° ". $loop++ ." correspond la clé ". $key  ." et contient ". $value ."<br>" ;
+            }
     }
 ?>
 <?php

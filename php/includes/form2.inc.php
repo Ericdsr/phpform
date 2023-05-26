@@ -72,7 +72,7 @@
     </div>
     <div class="mb-3 form-check">
         <input type="file" name="file" value="file">
-        <label for="file"> Choisir un fichier </label>
+        <label for="file"> Veuillez choisir un fichier JPG, JPEG, PNG ou GIF. </label>
       </div>
     <button type="submit" class="btn btn-primary" name="submit_more" value="Submit">Enregistrer les données</button>
   </form>
