@@ -167,7 +167,7 @@ include './includes/header.inc.html';
     }
     else {
         echo "<div class='col-md-9'><a href='index.php?add' class='btn btn-primary'> Ajouter des données</a></div>";
-        echo "<div class='col-md-9'><a href='index.php?addmore' class='btn btn-primary'> Ajouter Plus de données</a></div>";
+        echo "<div class='col-md-9'><a href='index.php?addmore' class='btn btn-secondary'> Ajouter Plus de données</a></div>";
     }
     function readTable($table){
         $loop = 0;
