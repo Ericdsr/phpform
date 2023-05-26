@@ -80,7 +80,8 @@ include './includes/header.inc.html';
         
         if ($_FILES["file"]["size"] > 2000000) {
             echo "Le fichier est trop volumineux. Veuillez choisir un fichier de taille inférieure.";
-        } else if (!in_array($imageFileType, $allowedExtensions)) {
+        } 
+        if (!in_array($imageFileType, $allowedExtensions)) {
             echo "Le type de fichier n'est pas pris en charge. Veuillez choisir un fichier JPG, JPEG, PNG ou GIF.";
         } else if (move_uploaded_file($_FILES["file"]["tmp_name"], $upload)) {
             echo "Téléchargé avec succès!";
