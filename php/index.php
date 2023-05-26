@@ -26,7 +26,27 @@ include './includes/header.inc.html';
     else if (isset($_GET['addmore'])){
         include './includes/form2.inc.php';
     }
-    
+    //tableau
+    else if(isset($_POST['submit'])){
+
+        if (!empty($_POST['first_name'])){$prenom = $_POST['first_name'];} else {$prenom = "";}
+        if (!empty($_POST['last_name'])){$nom = $_POST['last_name'];} else {$nom = "";}
+        if (!empty($_POST['age'])){$age = $_POST['age'];} else {$age = "";}
+        if (!empty($_POST['taille'])){$taille = $_POST['taille'];} else {$taille = "";}
+        if (!empty($_POST['civility'])){$civility = $_POST['civility'];} else {$civility = "";}
+
+        $table = array(
+            'first_name' => $prenom,
+            'last_name' => $nom,
+            'age' => $age,
+            'size' => $taille,
+            'civility' => $civility,);
+
+            $_SESSION['table'] = $table;
+            echo "données save";
+    }
+
+    // tableaux 2
     else if(isset($_POST['submit_more'])){
 
         if (!empty($_POST['first_name'])){$prenom = $_POST['first_name'];} else {$prenom = "";}
@@ -86,7 +106,6 @@ include './includes/header.inc.html';
             'react' => $react,
             'color' => $color,
             'date' => $date,
-            //'file' => $file,
             'img' => $file = array(
                 'name' => $name,
                 'type' => $type,

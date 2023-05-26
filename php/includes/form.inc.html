@@ -1,19 +1,19 @@
 <form action="index.php" method="POST" class="col-md-9">
     <div class="mb-3" >
       <label for="exampleInputEmail1" class="form-label">Prénom</label>
-      <input type="text" class="form-control" name="first_name">
+      <input type="text" class="form-control" name="first_name" required>
     </div>
     <div class="mb-3" >
         <label for="exampleInputEmail1" class="form-label">Nom</label>
-        <input type="text" class="form-control" name="last_name">
+        <input type="text" class="form-control" name="last_name" required>
       </div>
       <div class="mb-3" >
         <label for="exampleInputEmail1" class="form-label">Age (18ans à 70)</label>
-        <input type="number" class="form-control" min="18" max="70" name="age">
+        <input type="number" class="form-control" min="18" max="70" name="age" required>
       </div>
       <div class="input-group" >
           <span class="input-group-text">Taille(1,26m à 3m)</span>
-          <input type="number" class="form-control" step="0.01" min="1.26" max="3" name="size">
+          <input type="number" class="form-control" step="0.01" min="1.26" max="3" name="taille" required>
         <span class="input-group-text">m</span>
       </div>
     <div class="mb-3 form-check" >
