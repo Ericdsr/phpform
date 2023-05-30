@@ -65,14 +65,16 @@ include './includes/header.inc.html';
         if (!empty($_POST['color'])){$color = $_POST['color'];} else {$color = "";}
         if (!empty($_POST['date'])){$date = $_POST['date'];} else {$date = "";}
         if (!empty($_POST['size'])){$fichier = $_POST['size'];} else {$fichier = "";}
-        //$file = $_POST['file'];
         if (!empty($_POST['file'])){$file = $_POST['file'];} else {$file = "";}
         if (!empty($_FILES['file']['tmp_name'])){$tmpName = $_FILES['file']['tmp_name'];} else {$tmpName = "";}
         if (!empty($_FILES['file']['name'])){$name = $_FILES['file']['name'];} else {$name = "";}
         if (!empty($_FILES['file']['type'])){$type = $_FILES['file']['type'];} else {$type = "";}
         if (!empty($_FILES['file']['size'])){$size = $_FILES['file']['size'];} else {$size = "";}
         if (!empty($_FILES['file']['error'])){$error = $_FILES['file']['error'];} else {$error = "";}
+    
         
+        // Traitement d'image. 
+
         $upload = './uploaded/' .'image1.png';
 
         $allowedExtensions = array("jpg", "jpeg", "png", "gif");
@@ -121,6 +123,8 @@ include './includes/header.inc.html';
         echo '<div class="bg-success p-2 mt-2 text-dark bg-opacity-25">Données Save</div>';
     }
 
+
+    // debug
     else if (isset($_GET['debugging'])){
 
         echo "<h1>debuggage</h1>";
@@ -131,6 +135,8 @@ include './includes/header.inc.html';
         echo "</pre>";
     }
 
+
+    // concatenation
     else if (isset($_GET['concatenation'])){
         echo " <h1>Concatenation</h1>";
         echo " <h2> ===> Construction d'une phrase avec le contenu du tableau  </h2>";
@@ -147,6 +153,8 @@ include './includes/header.inc.html';
         echo  "<p> J'ai ".$table['age']." ans et je mesure " .$table['size']." m. "."</p>";
     }
 
+
+    // loop
     else if (isset($_GET['loop'])){
         echo " <h2>Boucle</h2>";
         echo " <h2> ===> Lecture à l'aide d'une boucle foreach  </h2>";
@@ -160,11 +168,17 @@ include './includes/header.inc.html';
             echo "à la ligne n° ". $loop++ ." correspond la clé ". $key  ." et contient ". $value ."<br>" ;
         }
     }
+
+
+    // function
     else if (isset($_GET['function'])){
         echo " <h2>function</h2>";
         echo " <h2> ===> J'utilise ma function readTable()  </h2>";
         readTable($table);
     }
+
+
+    // delete
     else if (isset($_GET['del'])){
         echo " <h2>delete</h2>";
         session_unset();
