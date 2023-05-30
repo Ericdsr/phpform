@@ -2,6 +2,7 @@
 session_start();
 include './includes/head.inc.html';
 include './includes/header.inc.html';
+
 ?>
 <div class="container">
     <div class="row">
@@ -20,6 +21,7 @@ include './includes/header.inc.html';
     <div class="col">
 
     <?php
+    
     if (isset($_GET['add'])){
         include './includes/form.inc.html';
     }
@@ -45,7 +47,7 @@ include './includes/header.inc.html';
             $_SESSION['table'] = $table;
             echo '<div class="bg-success p-2 mt-2 text-dark bg-opacity-25">Données Save</div>';
     }
-
+    
     // tableaux 2
     else if(isset($_POST['submit_more'])){
 
@@ -123,9 +125,12 @@ include './includes/header.inc.html';
         echo '<div class="bg-success p-2 mt-2 text-dark bg-opacity-25">Données Save</div>';
     }
 
+    if (!empty($_SESSION['table'])){
+        
+ 
 
     // debug
-    else if (isset($_GET['debugging'])){
+   if (isset($_GET['debugging'])){
 
         echo "<h1>debuggage</h1>";
         echo" <h2> ===> Lecture du tableau à l'aide de la fonction print_r() </h2>";
@@ -183,7 +188,8 @@ include './includes/header.inc.html';
         echo " <h2>delete</h2>";
         session_unset();
     }
-    else {
+}
+    else if(empty($_GET)) {
         echo "<div class='col-md-9'><a href='index.php?add' class='btn btn-primary'> Ajouter des données</a></div>";
         echo "<div class='col-md-9'><a href='index.php?addmore' class='btn btn-secondary'> Ajouter Plus de données</a></div>";
     }
