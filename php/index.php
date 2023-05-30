@@ -43,7 +43,7 @@ include './includes/header.inc.html';
             'civility' => $civility,);
 
             $_SESSION['table'] = $table;
-            echo "données save";
+            echo '<div class="bg-success p-2 mt-2 text-dark bg-opacity-25">Données Save</div>';
     }
 
     // tableaux 2
@@ -78,18 +78,19 @@ include './includes/header.inc.html';
         $allowedExtensions = array("jpg", "jpeg", "png", "gif");
         $imageFileType = strtolower(pathinfo($_FILES["file"]["name"], PATHINFO_EXTENSION));
         
-        if ($_FILES["file"]["size"] > 2000000) {
-            echo "Le fichier est trop volumineux. Veuillez choisir un fichier de taille inférieure.";
-        } 
-        if (!in_array($imageFileType, $allowedExtensions)) {
-            echo "Le type de fichier n'est pas pris en charge. Veuillez choisir un fichier JPG, JPEG, PNG ou GIF.";
-        } else if (move_uploaded_file($_FILES["file"]["tmp_name"], $upload)) {
-            echo "Téléchargé avec succès!";
+        if ($_FILES["file"]["size"] > 2 * 1024 * 1024) {
+            echo '<div class="bg-danger p-2 text-center text-dark bg-opacity-25"> Veuillez choisir un fichier de taille inférieure.</div>';
+        }  else if (move_uploaded_file($_FILES["file"]["tmp_name"], $upload)) {
+            echo '<div class="bg-success p-2 mt-2 text-dark bg-opacity-25">Image uploadée avec succés</div>';
         } else {
-            echo "Échec du téléchargement!";
+            echo '<div class="bg-danger p-2 text-center text-dark bg-opacity-25"> Veuillez choisir un fichier de taille inférieure.</div>';
         }
-        
-        
+        if (!in_array($imageFileType, $allowedExtensions)) {
+            echo '<div class="bg-danger p-2 text-center text-dark bg-opacity-25"> Que JPG,JPEG,PNG,GIF</div>';
+        }
+        else {
+            echo '<div class="bg-success p-2 mt-2 text-dark bg-opacity-25">Télécharger avec sucess</div>';
+        }
 
         $table = array(
             'first_name' => $prenom,
@@ -115,8 +116,9 @@ include './includes/header.inc.html';
                 'size' => $size,
             )
         );
+         
         $_SESSION['table'] = $table;
-        echo "données save";
+        echo '<div class="bg-success p-2 mt-2 text-dark bg-opacity-25">Données Save</div>';
     }
 
     else if (isset($_GET['debugging'])){
@@ -124,6 +126,7 @@ include './includes/header.inc.html';
         echo "<h1>debuggage</h1>";
         echo" <h2> ===> Lecture du tableau à l'aide de la fonction print_r() </h2>";
         echo "<pre>";
+        $table = array_filter($table);
         print_r($table);
         echo "</pre>";
     }
